@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="algorithms.stack.HelloTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-30T20:17:58" hostname="M&#x90;RIDA" time="0.052">
+  <properties/>
+  <testcase name="helloTest" classname="algorithms.stack.HelloTest" time="0.052"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

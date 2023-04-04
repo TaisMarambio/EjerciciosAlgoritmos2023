@@ -1,0 +1,45 @@
+apply plugin: 'idea'
+apply plugin: 'java'
+
+idea {
+    project {
+        //Set specific jdk and language level
+        jdkName = '1.8'
+        languageLevel = '1.8'
+    }
+    module {
+        downloadSources = true
+    }
+}
+//
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
+
+repositories {
+    // Central Repository
+    mavenCentral()
+
+    // GitHub Packages
+    maven {
+        def packageReaderSecret = "Z2hwX2Y0TDdnY25pY1NvQzJkRWlhSkhXSzZvdzY2Q1FQTTRmRkE2Nw=="
+        def packageReaderToken = new String(packageReaderSecret.decodeBase64())
+        url = uri("https://maven.pkg.github.com/FacultadDeIngenieria/*")
+        credentials {
+            username = "public"
+            password = packageReaderToken
+        }
+    }
+}
+
+dependencies {
+    /* Compile scope */
+    implementation 'ar.edu.austral.fi.algorithms:algorithms-base:1.0.0'
+    implementation 'org.jetbrains:annotations:22.0.0'
+
+    /* Test scope */
+    testImplementation 'org.assertj:assertj-core:3.20.2'
+    testImplementation 'junit:junit:4.13'
+}
